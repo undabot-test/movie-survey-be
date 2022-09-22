@@ -1,5 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { QuestionsModule } from 'src/questions/questions.module';
+import { SurveyModule } from 'src/survey/survey.module';
+import { ResponseInterceptor } from './response.interceptor';
 
 @Module({
   imports: [
@@ -11,8 +15,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    QuestionsModule,
+    SurveyModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ResponseInterceptor,
+    },
+  ],
 })
 export class AppModule {}
