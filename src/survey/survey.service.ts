@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { SurveyModel } from './model/survey.model';
 import { AnswersService } from '../answers/answers.service';
+import { AnswerInput } from 'src/answers/dto/answer.dto';
 
 @Injectable()
 export class SurveyService {
@@ -31,8 +32,8 @@ export class SurveyService {
     return this.findOne();
   }
 
-  async submitSurvey(id: string, answers) {
-    await this.answersService.saveAnswers(answers);
+  async submitSurvey(id: string, answers: AnswerInput[]) {
+    this.answersService.saveAnswers(answers);
     const survey = await this.findOneById(id);
     return {
       type: 'surveyAnswers',

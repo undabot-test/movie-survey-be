@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Answer } from './answer.interface';
+import { AnswerInput } from './dto/answer.dto';
 
 @Injectable()
 export class AnswersService {
-  async saveAnswers(answers: Answer[]) {
+  saveAnswers(answers: AnswerInput[]) {
     return answers;
   }
 }
