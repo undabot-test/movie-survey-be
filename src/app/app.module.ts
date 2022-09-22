@@ -4,6 +4,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { QuestionsModule } from 'src/questions/questions.module';
 import { SurveyModule } from 'src/survey/survey.module';
 import { ResponseInterceptor } from './response.interceptor';
+import { AnswersModule } from 'src/answers/answers.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ResponseInterceptor } from './response.interceptor';
     }),
     QuestionsModule,
     SurveyModule,
+    AnswersModule,
   ],
   controllers: [],
   providers: [
