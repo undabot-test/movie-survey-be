@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "nest start --watch",
+    "start": "node dist/main",
     "build": "rimraf dist && nest build"
   },
   "dependencies": {

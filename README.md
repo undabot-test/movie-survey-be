@@ -1,6 +1,6 @@
 ## Movie Survey
 
-Application is available at:
+Application is available at: https://movie-survey-be.herokuapp.com/
 
 ## Local Environment
 
@@ -41,3 +41,7 @@ Open [http://localhost:4000/](http://[::1]:4000/) to access application.
 ### `yarn build`
 
 Builds the app for production to the `dist` folder.
+
+### `yarn start`
+
+Runs the app from the `dist` folder. Application should be build before with the `yarn build` command.
