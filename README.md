@@ -1,6 +1,6 @@
 ## Movie Survey
 
-Application is available at: https://movie-survey-be.herokuapp.com/
+Application is available at: https://movie-survey-be.herokuapp.com/api/v1/
 
 ## Local Environment
 
